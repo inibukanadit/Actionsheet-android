@@ -48,7 +48,8 @@ new ActionSheet(MainActivityJava.this,data)
                             }
                         });
 ```
-  -  How to use in Kotlin.
+
+## How to use in Kotlin.
 ```kotlin
 val data by lazy { ArrayList<String>() }
 
