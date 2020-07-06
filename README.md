@@ -22,7 +22,7 @@ allprojects {
   -  Add this to your app `build.gradle`:
  
 ```gradle
-implementation 'com.github.inibukanadit:android-actionsheets:0.3'
+implementation 'com.github.inibukanadit:android-actionsheets:0.3-alpha1'
 ```
 
 ## How to use in Java.
