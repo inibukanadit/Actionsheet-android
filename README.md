@@ -1,9 +1,9 @@
-# Actionsheet-android
+# Android Actionsheet
 
 [![API](https://img.shields.io/badge/API-14%2B-red.svg?style=flat)](https://android-arsenal.com/api?level=14)
-[![](https://jitpack.io/v/mkhoiron/Actionsheet-android.svg)](https://jitpack.io/#mkhoiron/Actionsheet-android/0.1)
+[![](https://jitpack.io/v/inibukanadit/android-actionsheets.svg)](https://jitpack.io/#inibukanadit/android-actionsheets)
 
-Actionshet-android is an Android Library to build Actionshet like iOS UIActionSheet component, iOS7 style, custom color etc
+Android Actionsheet is an Android Library to build Actionsheet (iOS UIActionSheet) component, iOS7 style, custom color etc
 
 ![alt text](https://image.ibb.co/bzgpFy/mm_min.png)
 ![alt text](https://www.appcoda.com/wp-content/uploads/2014/05/t11_1_normal_action_sheet.jpg)
@@ -14,20 +14,18 @@ Actionshet-android is an Android Library to build Actionshet like iOS UIActionSh
  
 ```gradle
 allprojects {
-	repositories {
-		maven { url 'https://jitpack.io' }
-	}
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
 }
 ```
   -  Add this to your app `build.gradle`:
  
 ```gradle
-dependencies {
-	implementation 'com.github.mkhoiron:Actionsheet-android:0.1'
-}
+implementation 'com.github.mkhoiron:Actionsheet-android:0.1'
 ```
 
-## Using Java
+## How to use in Java.
 
 ```java
 ArrayList<String> data = new ArrayList<>();
@@ -39,27 +37,18 @@ data.add("Duplicate");
 
 new ActionSheet(MainActivityJava.this,data)
                         .setTitle("What do you want to do with the file")
-                        .setCancelTitle("Cancle")
+                        .setCancelTitle("Cancel")
                         .setColorTitle(getResources().getColor(R.color.title))
                         .setColorTitleCancel(getResources().getColor(R.color.action))
                         .setColorData(getResources().getColor(R.color.action))
                         .create(new ActionSheetCallBack() {
                             @Override
                             public void data(@NotNull String data, int position) {
-                                switch (position){
-                                    case 0:
-                                        // your action
-                                    case 1:
-                                        // your action
-                                    case 2:
-                                        // your action
-                                    case 3:
-                                        // your action
-                                }
+			    	// check the position to determine which menu to handle
                             }
                         });
 ```
-  -  In Kotlin
+  -  How to use in Kotlin.
 ```kotlin
 val data by lazy { ArrayList<String>() }
 
@@ -72,14 +61,13 @@ ActionSheet(this,data)
                    .setColorTitleCancel(Color.parseColor("#FF4081"))
                    .setColorTitle(Color.parseColor("#FF4081"))
                    .setColorData(Color.parseColor("#FF4081"))
-                   .create(object :ActionSheetCallBack{
+                   .create(object : ActionSheetCallBack {
                        override fun data(data: String, position: Int) {
-                           if ("English".equals(data)){
-                               // your action
-                           }else if("Indonesia".equals(data)){
-                               // your action
+                           if ("English".equals(data)) {
+                               // action
+                           } else if("Indonesia".equals(data)) {
+                               // action
                            }
-                           setToast(data)
                        }
                    })
 ```
@@ -104,17 +92,17 @@ actionSheet.create(new ActionSheetCallBack() {
                     }
                 });
 ```
-## update fitur
+## Features
 
 Function      				   | description
 -------------------------------------------| -------------
-.hideTitle()  			           | hiden for title
-.setFontData(R.font.meryana_script)        | change font data
-.setFontCancelTitle(R.font.meryana_script) | change font cancel
-.setFontTitle(R.font.meryana_script)       | change font title
-.setSizeTextCancel(30)			   | change size text cancel
-.setSizeTextData(30)		           | change size text data
-.setSizeTextTitle(30)		 	   | change size text title
+.hideTitle()  			           | hide the Title
+.setFontTitle(R.font.meryana_script)       | change the font of Title
+.setFontData(R.font.meryana_script)        | change the font of text Data
+.setFontCancelTitle(R.font.meryana_script) | change the font of Cancel
+.setSizeTextTitle(30)		 	   | change the size of Title
+.setSizeTextData(30)		           | change the size of text Data
+.setSizeTextCancel(30)			   | change the size of Cancel
 
 
 
